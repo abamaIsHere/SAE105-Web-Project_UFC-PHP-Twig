@@ -1,0 +1,207 @@
+{% extends "base.twig" %}
+
+{% block ttile %}
+	{{ title|title }}
+	{# ?? #}
+{% endblock ttile %}
+
+{% block css_style %}
+	<link rel="stylesheet" href="./css/match.css">
+{% endblock css_style %}
+{# languages option #}
+{% block language %}
+	<li>
+		<a href="match.php"><img src="./images/language_icon/france.png" alt="icône de langue pour la france"></a>
+	</li>
+{% endblock %}
+
+{% block language_en %}
+	<li>
+		<a href="match-en.php"><img src="./images/language_icon/united-kingdom.png" alt="language icon united-kingdom"></a>
+	</li>
+{% endblock %}
+
+{% block main %}
+
+	<main>
+		{# sticky bar #}
+		<div class="sticky_bar_menu">
+			<nav class="sticky_catagory_menu">
+				{% block sticky_menu %}
+					{% if lang == 'en' %}
+						<ul>
+							{% for menu_items in matchs_article|sort ((a, b) => a.menu <=> b.menu) %}
+								<li>
+									<a href="#{{ menu_items.menu|replace({' ': '_'}) }}">{{ menu_items.menu }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+						<ul>
+							{% for menu_items in matchs_article|sort ((a, b) => a.menu <=> b.menu) %}
+								<li>
+									<a href="#{{ menu_items.menu|replace({' ': '_'}) }}">{{ menu_items.menu }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				{% endblock %}
+			</nav>
+		</div>
+		{# page head title #}
+		<section class="page_title">
+			<h2 class="section_head">heading</h2>
+			{% block page_title_section %}
+				<div class="role_page_title_bg">
+					<img src="./images/fond/UFC_Logo.webp" alt="ufc logo">
+					<h1>expérience</h1>
+				</div>
+			{% endblock %}
+		</section>
+		{# main body articles #}
+		<section class="main_body">
+			<h2 class="section_head">heading</h2>
+			<section class="section_articls">
+				{% block main_child %}
+					<h2 class="section_head">heading</h2>
+					{% if lang == 'en' %}
+						<h2 class="section_head">{{ section_title|title }}</h2>
+						{% for match in matchs_article %}
+							<article id="{{ match.menu|replace({' ': '_'}) }}" class="match_articl_item">
+								<div class="single_artic">
+									<img src="{{ match.img }}" alt="{{ match.article_title }}">
+								</div>
+								<div class="single_artic_info">
+									<div class="single_artic_info_title">
+										<h2>{{ match.article_title }}</h2>
+										<p>{{ match.article_sub_title }}</p>
+									</div>
+									<div class="single_artic_match_info">
+										{% for info in match.img_info %}
+											<p>{{ info }}
+												|</p>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="single_match_articl_detail">
+									<div class="small_banner">
+										<h3>{{ match.second_title }}:</h3>
+										<div class="small_banner_button">
+											<a href="">{{ match.comment_regarder }}</a>
+											<a class="" href=""><img src="{{ match.banner_img|replace({' ': '%20'}) }}" alt="{{ match.comment_regarder }} rmc sport"></a>
+										</div>
+									</div>
+									{# {{ match.details|split('.') }} #}
+									<div class="single_match_articl_detail_txt">
+										{% set paragraphs = match.details|split('\n') %}
+										{% for paragraph in paragraphs %}
+											{% if paragraphs != "" %}
+												<p>{{ paragraph|trim }}</p>
+											{% endif %}
+										{% endfor %}
+									</div>
+								</div>
+							</article>
+						{% endfor %}
+
+					{% else %}
+						{# main body articles french #}
+
+						{% for match in matchs_article %}
+							<article id="{{ match.menu|replace({' ': '_'}) }}" class="match_articl_item">
+								<div class="single_artic">
+									<img src="{{ match.img }}" alt="{{ match.article_title }}">
+								</div>
+								<div class="single_artic_info">
+									<div class="single_artic_info_title">
+										<h2>{{ match.article_title }}</h2>
+										<p>{{ match.article_sub_title }}</p>
+									</div>
+									<div class="single_artic_match_info">
+										{% for info in match.img_info %}
+											<p>{{ info }}
+												|</p>
+										{% endfor %}
+									</div>
+									{# <h3>Comment regarder:</h3> #}
+								</div>
+								<div class="single_match_articl_detail">
+									<div class="small_banner">
+										<h3>{{ match.second_title }}:</h3>
+										<div class="small_banner_button">
+											<a href="">{{ match.comment_regarder }}</a>
+											<a class="" href=""><img src="{{ match.banner_img|replace({' ': '%20'}) }}" alt="{{ match.comment_regarder }} rmc sport"></a>
+										</div>
+									</div>
+									{# {{ match.details|split('.') }} #}
+									<div class="single_match_articl_detail_txt">
+										{% set paragraphs = match.details|split('\n') %}
+										{% for paragraph in paragraphs %}
+											{% if paragraphs != "" %}
+												<p>{{ paragraph|trim }}</p>
+											{% endif %}
+										{% endfor %}
+									</div>
+								</div>
+							</article>
+						{% endfor %}
+					{% endif %}
+				{% endblock main_child %}
+			</section>
+
+			{# aside #}
+			<aside class="side_bar_match">
+				{% block aside %}
+					{% if lang == 'en' %}
+						<div class="side_bar_match_content">
+							<h2>À suivre</h2>
+							{% for side_bar_item in match_side_bar_items %}
+								<div class="side_bar_item">
+									<img src="{{ side_bar_item.bar_img|replace({' ': '%20'}) }}" alt="{{ side_bar_item.bar_title }}">
+									<a target="_blank" href="{{ side_bar_item.link }}">{{ side_bar_item.bar_title }}</a>
+									<p class="detail_match_side_bar">{{ side_bar_item.bar_title_detial }}</p>
+								</div>
+							{% endfor %}
+						</div>
+
+					{% else %}
+						<div class="side_bar_match_content">
+							<h2>À suivre</h2>
+							{% for side_bar_item in match_side_bar_items %}
+								<div class="side_bar_item">
+									<img src="{{ side_bar_item.bar_img|replace({' ': '%20'}) }}" alt="{{ side_bar_item.bar_title }}">
+									<a target="_blank" href="{{ side_bar_item.link }}">{{ side_bar_item.bar_title }}</a>
+									<p class="detail_match_side_bar">{{ side_bar_item.bar_title_detial }}</p>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+					{% if lang == 'en' %}
+						<div class="twitter_post">
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">Who should Alexander Volkanovski fight next? Trade UFC exclusively on
+									<a href="https://twitter.com/Polymarket?ref_src=twsrc%5Etfw">@Polymarket</a>.<a href="https://t.co/vC6Ta5SWEo">https://t.co/vC6Ta5SWEo</a>
+									<a href="https://t.co/FRFc9RhKZ1">pic.twitter.com/FRFc9RhKZ1</a>
+								</p>&mdash; UFC (@ufc)
+								<a href="https://twitter.com/ufc/status/2018761406372606115?ref_src=twsrc%5Etfw">February 3, 2026</a>
+							</blockquote>
+							<script async src="https://platform.twitter.com/widgets.js" ></script>
+						</div>
+					{% else %}
+						<div class="twitter_post">
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">Qui Alexander Volkanovski devrait-il combattre ensuite ? Négociez l'UFC exclusivement sur
+									<a href="https://twitter.com/Polymarket?ref_src=twsrc%5Etfw">@Polymarket</a>.<a href="https://t.co/vC6Ta5SWEo">https://t.co/vC6Ta5SWEo</a>
+									<a href="https://t.co/FRFc9RhKZ1">pic.twitter.com/FRFc9RhKZ1</a>
+								</p>&mdash; UFC (@ufc)
+								<a href="https://twitter.com/ufc/status/2018761406372606115?ref_src=twsrc%5Etfw">3 février 2026</a>
+							</blockquote>
+							<script async src="https://platform.twitter.com/widgets.js" ></script>
+						</div>
+					{% endif %}
+				{% endblock aside %}
+			</aside>
+		</section>
+	</main>
+
+{% endblock main %}

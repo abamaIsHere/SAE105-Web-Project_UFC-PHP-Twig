@@ -1,0 +1,126 @@
+{% extends "match.twig" %}
+
+{% block title %}
+	{{ title|title }}
+{% endblock title %}
+
+{% block css_style %}
+	<link rel="stylesheet" href="css/actu.css">
+{% endblock css_style %}
+												{# language options #}
+{% block language %}
+	<li>
+		<a href="actu.php"><img src="./images/language_icon/france.png" alt="icône de langue pour la france"></a>
+	</li>
+{% endblock %}
+
+{% block language_en %}
+	<li>
+		<a href="actu-en.php"><img src="./images/language_icon/united-kingdom.png" alt="language icon united-kingdom"></a>
+	</li>
+{% endblock %}
+														{# sticky menu #}
+{% block sticky_menu %}
+	<ul>
+		{% for menu_items in newses %}
+			<li>
+				<a href="#{{ menu_items.menu|replace({' ': '_'}) }}">{{ menu_items.menu }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+														{# page head #}
+{% block page_title_section %}
+	{% if lang == 'en' %}
+		<div class="role_page_title_bg">
+			<p>Tendency</p>
+			<h1>VIDEOS, ARTICLES AND GALLERIES</h1>
+			<p>Stories</p>
+		</div>
+
+	{% else %}
+		<div class="role_page_title_bg">
+			<p>Tendance</p>
+			<h1>VIDÉOS, ARTICLES ET GALERIES</h1>
+			<p>Histoires</p>
+		</div>
+	{% endif %}
+
+{% endblock %}
+															{# main body content #}
+{% block main_child %}
+	{% if lang == 'en' %}
+		{% for news in newses %}
+			<h2 class="section_head">heading</h2>
+			<article id="{{ news.menu|replace({' ': '_'}) }}" class="news_articles">
+				<div class="news_articls_elements">
+					<div class="news_field_top">
+						<p>{{ news.field_title }}</p>
+						<h2>{{ news.main_title }}</h2>
+						<div class="date_info_tags">
+							{% for credit_news in news.date_info %}
+								{% if credit_news != "" %}
+									<p>{{ credit_news|title }},</p>
+								{% endif %}
+
+							{% endfor %}
+						</div>
+					</div>
+					<div class="news_img">
+						<img src="{{ news.img|replace({' ': '%20'}) }}" alt="{{ news.field_title }}">
+					</div>
+
+					<div class="news_main_content_article_p">
+						{% set news_articl_detail = news.main_content_article|split('\n') %}
+						{% for news_articl in news_articl_detail %}
+							{% if news_articl_detail != "" %}
+								<p>{{ news_articl|trim }}</p>
+							{% endif %}
+						{% endfor %}
+					</div>
+
+				</div>
+			</article>
+		{% endfor %}
+															{# main body content french#}
+	{% else %}
+		{% for news in newses %}
+			<h2 class="section_head">heading</h2>
+			<article id="{{ news.menu|replace({' ': '_'}) }}" class="news_articles">
+				<div class="news_articls_elements">
+					<div class="news_field_top">
+						<p>{{ news.field_title }}</p>
+						<h2>{{ news.main_title }}</h2>
+						<div class="date_info_tags">
+							{% for credit_news in news.date_info %}
+								{% if credit_news != "" %}
+									<p>{{ credit_news|title }},</p>
+								{% endif %}
+
+							{% endfor %}
+						</div>
+					</div>
+					<div class="news_img">
+						<img src="{{ news.img|replace({' ': '%20'}) }}" alt="{{ news.field_title }}">
+					</div>
+
+					<div class="news_main_content_article_p">
+						{% set news_articl_detail = news.main_content_article|split('\n') %}
+						{% for news_articl in news_articl_detail %}
+							{% if news_articl_detail != "" %}
+								<p>{{ news_articl|trim }}</p>
+							{% endif %}
+						{% endfor %}
+					</div>
+
+				</div>
+			</article>
+		{% endfor %}
+	{% endif %}
+
+{% endblock main_child %}
+
+{% block aside %}
+	{% if condition %}{% endif %}
+
+{% endblock %}

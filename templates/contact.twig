@@ -1,0 +1,152 @@
+{% extends "base.twig" %}
+
+{% block title %}
+	{{ title|title }}
+{% endblock title %}
+
+
+{% block css_style %}
+	<link rel="stylesheet" href="./css/contact.css">
+{% endblock %}
+														{# languages option #}
+
+{% block language %}
+	<li>
+		<a href="contact.php"><img src="./images/language_icon/france.png" alt="icône de langue pour la france"></a>
+	</li>
+{% endblock %}
+
+{% block language_en %}
+	<li>
+		<a href="contact-en.php"><img src="./images/language_icon/united-kingdom.png" alt="language icon united kingdom"></a>
+	</li>
+{% endblock %}
+
+{% block main %}
+	<main>
+														{# main body #}
+		{% if lang == 'en' %}
+			<section class="contact_form_section">
+				<div class="role_img">
+					<img src="./images/fond/top_bar.png" alt="">
+					<h1>contact page</h1>
+				</div>
+				<div class="contact_form">
+					<div class="top_contact_section">
+						<h2>Welcome to the Octagon</h2>
+						<h3>Get your self signed up for the official UFC mailing list</h3>
+						<p>Join our corner and receive highlights from fight nights, early access to tickets, exclusive offers, and much more, all delivered straight to your inbox.</p>
+					</div>
+
+
+					<form class="ufc_form">
+						<h2>YOUR INFORMATION</h2>
+
+						<div class="form_row">
+							<div class="form_group">
+								<label for="firstName">First Name<span class="text_ufc_red">*</span>
+								</label>
+								<input type="text" id="firstName" name="firstName" required>
+							</div>
+							<div class="form_group">
+								<label for="lastName">Last Name<span class="text_ufc_red">*</span>
+								</label>
+								<input type="text" id="lastName" name="lastName" required>
+							</div>
+						</div>
+
+						<div class="form_row">
+							<div class="form_group">
+								<label for="email">Email<span class="text_ufc_red">*</span>
+								</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="form_group">
+								<label for="phone">Phone</label>
+								<input type="tel" id="phone" name="phone" maxlength="14">
+							</div>
+						</div>
+
+						<div class="disclaimer">
+							<p>Stay updated on club news! By checking the box below titled “I Agree to Text Messages” you are providing your signature...</p>
+							<label class="checkbox_container">
+								<input type="checkbox" id="textMessages" name="textMessages">
+								I Agree to Text Messages
+							</label>
+						</div>
+
+						<div class="button_group">
+							<button type="submit" class="btn_primary">
+								<span >Continue to Billing</span>
+							</button>
+							<button type="button" class="btn_secondary">
+								<span >Back</span>
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+															{# main body french #}
+		{% else %}
+			<section class="role_img">
+				<img src="./images/fond/top_bar.png" alt="">
+				<h1>page de contact</h1>
+			</section>
+			<section class="contact_form_section">
+				<div class="contact_form">
+					<div class="top_contact_section">
+						<h2>Bienvenue à l'Octogone</h2>
+						<h3>Inscrivez-vous à la liste de diffusion officielle de l'UFC</h3>
+						<p>Rejoignez notre coin et recevez les moments forts des soirées de combat, un accès anticipé aux billets, des offres exclusives et bien plus encore, le tout directement dans votre boîte mail.</p>
+					</div>
+					<form class="ufc_form">
+						<h2>VOS INFORMATIONS</h2>
+
+						<div class="form_row">
+							<div class="form_group">
+								<label for="firstName">Prénom<span class="text_ufc_red">*</span>
+								</label>
+								<input type="text" id="firstName" name="firstName" required>
+							</div>
+							<div class="form_group">
+								<label for="lastName">Nom de famille<span class="text_ufc_red">*</span>
+								</label>
+								<input type="text" id="lastName" name="lastName" required>
+							</div>
+						</div>
+
+						<div class="form_row">
+							<div class="form_group">
+								<label for="email">Email<span class="text_ufc_red">*</span>
+								</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="form_group">
+								<label for="phone">Phone</label>
+								<input type="tel" id="phone" name="phone" maxlength="14">
+							</div>
+						</div>
+
+						<div class="disclaimer">
+							<p>Restez informé des actualités du club ! En cochant la case ci-dessous intitulée « J'accepte de recevoir des SMS », vous fournissez votresignature...</p>
+
+							<label class="checkbox_container">
+								<input type="checkbox" id="textMessages" name="textMessages">
+								J'accepte de recevoir des SMS
+							</label>
+						</div>
+
+						<div class="button_group">
+							<button type="submit" class="btn_primary">
+								<span>Passer à la facturation</span>
+							</button>
+							<button type="button" class="btn_secondary">
+								<span>Retour</span>
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		{% endif %}
+	</main>
+{% endblock main %}

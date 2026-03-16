@@ -1,0 +1,395 @@
+{% extends "match.twig" %}
+
+{% block title %}
+	{{ title|title }}
+{% endblock title %}
+
+{% block css_style %}
+	<link rel="stylesheet" href="./css/a_propos.css">
+{% endblock %}
+{# language options #}
+{% block language %}
+	<li>
+		<a href="a_propos.php"><img src="./images/language_icon/france.png" alt="icône de langue pour la france"></a>
+	</li>
+{% endblock %}
+
+{% block language_en %}
+	<li>
+		<a href="a_propos-en.php"><img src="./images/language_icon/united-kingdom.png" alt="language icon united-kingdom"></a>
+	</li>
+{% endblock %}
+
+{% block sticky_menu %}{% endblock %}
+
+{# page head section #}
+{% block page_title_section %}
+	{% if lang == 'en' %}
+		<div class="role_page_title_bg">
+			<img src="./images/fond/UFC_Logo.webp" alt="ufc logo">
+			<h1>Learn more about us</h1>
+		</div>
+	{% else %}
+		<div class="role_page_title_bg">
+			<img src="./images/fond/UFC_Logo.webp" alt="ufc logo">
+			<h1>En savoir plus sur nous</h1>
+		</div>
+	{% endif %}
+
+
+{% endblock %}
+{# cgu #}
+{% block main_child %}
+	{% if lang =='en' %}
+
+		<h2 class="cgu">Legal Notices</h2>
+		<div class="cgu_info">
+			<p>Editor: UFC</p>
+			<p>Host : UFC</p>
+			<p>Contact:<a href="https://www.ufc.com/">UFC</a>
+			</p>
+			<ol>
+				<li>Intellectual Property
+					<ul>
+						<li>
+							This is the most important part for a sports site.</li>
+						<li>
+							Third Party Trademarks: Clarify that “UFC”, fighter names and event images are the property of Zuffa, LLC (or UFC). Your site is an [educational/information] project and is not officially affiliated with the UFC.</li>
+					</ul>
+				</li>
+				<li>Responsibility
+					<ul>
+						<li>Accuracy: You do not guarantee that fight results or dates (e.g. UFC 324) are error free.</li>
+						<li>Outgoing Links: You are not responsible for the content of third-party sites (e.g. links to the official ticket office).</li>
+					</ul>
+				</li>
+				<li>
+					Personal Data (GDPR)
+					<ul>
+						<li>The data (Name, Email) is collected only to respond to requests.</li>
+						<li>In accordance with the law, the user can request the deletion of their data.</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	{% else %}
+		{# cgu french #}
+		<h2 class="cgu">Mentions Légales</h2>
+		<div class="cgu_info">
+			<p>Éditeur : UFC</p>
+			<p>Hébergeur : UFC</p>
+			<p>Contact :<a href="https://www.ufc.com/">UFC</a>
+			</p>
+			<ol>
+				<li>Propriété Intellectuelle
+					<ul>
+						<li>
+							C'est la partie la plus importante pour un site de sport.</li>
+						<li>
+							Marques Tierces : Précisez que "UFC", les noms des combattants et les images des événements sont la propriété de Zuffa, LLC (ou UFC). Votre site est un projet [éducatif/d'information] et n'est pas affilié officiellement à l'UFC.</li>
+					</ul>
+				</li>
+				<li>Responsabilité
+					<ul>
+						<li>Exactitude : Vous ne garantissez pas que les résultats des combats ou les dates (ex: UFC 324) sont exempts d'erreurs.</li>
+						<li>Liens Sortants : Vous n'êtes pas responsable du contenu des sites tiers (ex: liens vers la billetterie officielle).</li>
+					</ul>
+				</li>
+				<li>
+					Données Personnelles (RGPD)
+					<ul>
+						<li>Les données (Nom, Email) sont collectées uniquement pour répondre aux demandes.</li>
+						<li>Conformément à la loi, l'utilisateur peut demander la suppression de ses données.</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	{% endif %}
+	{# about  #}
+	{% if lang == 'en' %}
+		<div class="about_content">
+			<div class="about_content_item">
+				<h2>The Evolution of Combat (History)</h2>
+				<ul>
+					<li>The Beginnings: Founded in 1993, the UFC began as a tournament to identify the most effective martial art in the world.</li>
+					<li>The Octagon®: This iconic eight-sided cage is not just a decorative element; it was designed to provide neutral ground that does not favor any specific discipline.
+					</li>
+					<li>A New Era: What was once a spectacle without rules has become a highly regulated and globally recognized professional sport.</li>
+				</ul>
+			</div>
+
+			<div class="about_content_table">
+				<h2>
+					Weight Categories
+				</h2>
+				<p>To help your users understand the technical structure, here are the main divisions. This board is the perfect place to use your Barlow Condensed or D-DIN fonts.</p>
+				<table>
+					<thead>
+						<tr>
+							<td>Division</td>
+							<td>Weight Limit</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Flyweight</td>
+							<td>125 lbs (56,7 kg)</td>
+						</tr>
+						<tr>
+							<td>Bantamweight</td>
+							<td>
+								135 lbs (61,2 kg)</td>
+						</tr>
+						<tr>
+							<td>Lightweight</td>
+							<td>155 lbs (70,3 kg)</td>
+						</tr>
+						<tr>
+							<td>Welterweight</td>
+							<td>170 lbs (77,1 kg)</td>
+						</tr>
+						<tr>
+							<td>Middleweight</td>
+							<td>185 lbs (83,9 kg)</td>
+						</tr>
+						<tr>
+							<td>Light Heavyweight</td>
+							<td>205 lbs (93 kg)</td>
+						</tr>
+						<tr>
+							<td>Heavyweight</td>
+							<td>265 lbs (120,2 kg)</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="about_content_roles">
+				<h2>The Golden Rules</h2>
+				<ul>
+					<li>
+						Fight Format: Standard fights last three 5-minute rounds, while main events and title fights last five rounds.
+					</li>
+					<li>
+						Victory Modes: Fighters can win by Knockout (KO), Technical Knockout (TKO), Submission or by judges' decision.
+					</li>
+					<li>
+						Unified Rules: The UFC follows the Unified Rules of Mixed Martial Arts, the gold standard for ensuring athlete safety and sporting fairness.
+					</li>
+				</ul>
+			</div>
+
+			<div class="about_content_numbers">
+				<h2>UFC in Figures</h2>
+				<p>Use these statistics to show the scale of the organization. This data can be managed dynamically with a Twig loop:</p>
+				<ul>
+					<li>Broadcast: Events are broadcast in more than 165 countries and territories.</li>
+					<li>Audience: The league reaches more than 1.1 billion households around the world.</li>
+					<li>Community: A massive social media presence with over 280 million passionate fans.</li>
+				</ul>
+			</div>
+		</div>
+	{% else %}
+		{# about french #}
+
+		<div class="about_content">
+			<div class="about_content_item">
+				<h2>L’Évolution du Combat (L'Histoire)</h2>
+				<ul>
+					<li>Les Débuts : Fondée en 1993, l'UFC a commencé comme un tournoi visant à identifier l'art martial le plus efficace au monde.</li>
+					<li>L'Octogone® : Cette cage emblématique à huit côtés n'est pas qu'un élément de décor ; elle a été conçue pour offrir un terrain neutre qui ne favorise aucune discipline spécifique.
+					</li>
+					<li>Une Ère Nouvelle : Ce qui était autrefois un spectacle sans règles est devenu un sport professionnel hautement régulé et reconnu mondialement.</li>
+				</ul>
+			</div>
+
+			<div class="about_content_table">
+				<h2>
+					Les Catégories de Poids
+				</h2>
+				<p>Pour aider vos utilisateurs à comprendre la structure technique, voici les principales divisions. Ce tableau est l'endroit idéal pour utiliser vos polices Barlow Condensed ou D-DIN.</p>
+				<table>
+					<thead>
+						<tr>
+							<td>Division</td>
+							<td>Limite de Poids</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Poids Mouches (Flyweight)</td>
+							<td>125 lbs (56,7 kg)</td>
+						</tr>
+						<tr>
+							<td>Poids Coqs (Bantamweight)</td>
+							<td>
+								135 lbs (61,2 kg)</td>
+						</tr>
+						<tr>
+							<td>Poids Légers (Lightweight)</td>
+							<td>155 lbs (70,3 kg)</td>
+						</tr>
+						<tr>
+							<td>Poids Welters (Welterweight)</td>
+							<td>170 lbs (77,1 kg)</td>
+						</tr>
+						<tr>
+							<td>Poids Moyens (Middleweight)</td>
+							<td>185 lbs (83,9 kg)</td>
+						</tr>
+						<tr>
+							<td>Poids Mi-Lourds (Light Heavyweight)</td>
+							<td>205 lbs (93 kg)</td>
+						</tr>
+						<tr>
+							<td>Poids Lourds (Heavyweight)</td>
+							<td>265 lbs (120,2 kg)</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="about_content_roles">
+				<h2>Les Règles d'Or</h2>
+				<ul>
+					<li>
+						Format des Combats : Les combats standards durent trois rounds de 5 minutes, tandis que les événements principaux et les combats pour le titre durent cinq rounds.
+					</li>
+					<li>
+						Modes de Victoire : Les combattants peuvent gagner par Knockout (KO), Knockout Technique (TKO), Soumission ou par décision des juges.
+					</li>
+					<li>
+						Règles Unifiées : L'UFC suit les « Unified Rules of Mixed Martial Arts », la norme absolue pour garantir la sécurité des athlètes et l'équité sportive.
+					</li>
+				</ul>
+			</div>
+
+			<div class="about_content_numbers">
+				<h2>L'UFC en Chiffres</h2>
+				<p>Utilisez ces statistiques pour montrer l'ampleur de l'organisation. Ces données peuvent être gérées dynamiquement avec une boucle Twig :</p>
+				<ul>
+					<li>Diffusion : Les événements sont diffusés dans plus de 165 pays et territoires.</li>
+					<li>Audience : La ligue atteint plus de 1,1 milliard de foyers à travers le monde.</li>
+					<li>Communauté : Une présence massive sur les réseaux sociaux avec plus de 280 millions de fans passionnés.</li>
+				</ul>
+			</div>
+
+		</div>
+
+	{% endif %}
+{% endblock main_child %}
+
+{% block aside %}
+	{# aside #}
+	{% if lang == 'en' %}
+
+		<div class="a_propos_side_bar">
+			<div class="side_bar_banner">
+				<div class="role_sidebar_img">
+					<img src="./images/fond/card-related-event-bg-image.avif" alt="event background image">
+				</div>
+				<div class="cheracter_profile">
+					<img src="./images/fighters/VOLKANOVSKI_ALEXANDER_L_BELT_02-17.avif" alt="{{ fighter_profile.name }}">
+					<img src="./images/fighters/LOPES_DIEGO_R_04-12.avif" alt="{{ extra_player }}">
+				</div>
+				<div class="cheracter_profile_detail">
+					<p>Featherweight Title Bout</p>
+					<h3>VOLKANOVSKI</h3>
+					<div class="role_line">
+						<span>VS</span>
+					</div>
+					<h3>LOPES</h3>
+					<p>Sun, Feb 1 / 3:00 AM CET</p>
+					<p>Qudos Bank Arena, Sydney Olympic Park Australia</p>
+				</div>
+				<div class="a_propos_side_bar_buttons">
+					<a href="">how to watch</a>
+					<a href="">ticket</a>
+				</div>
+			</div>
+		</div>
+	{% else %}
+		{# aside fr #}
+		<div class="a_propos_side_bar">
+			<div class="side_bar_banner">
+				<div class="role_sidebar_img">
+					<img src="./images/fond/card-related-event-bg-image.avif" alt="event background image">
+				</div>
+				<div class="cheracter_profile">
+					<img src="./images/fighters/VOLKANOVSKI_ALEXANDER_L_BELT_02-17.avif" alt="{{ fighter_profile.name }}">
+					<img src="./images/fighters/LOPES_DIEGO_R_04-12.avif" alt="{{ extra_player }}">
+				</div>
+				<div class="cheracter_profile_detail">
+					<p>Featherweight Title Bout</p>
+					<h3>VOLKANOVSKI</h3>
+					<div class="role_line">
+						<span>VS</span>
+					</div>
+					<h3>LOPES</h3>
+					<p>dim, fév 1 / 3:00 AM CET</p>
+					<p>Qudos Bank Arena, Sydney Olympic Park Australia</p>
+				</div>
+				<div class="a_propos_side_bar_buttons">
+					<a target="_blank" href="https://www.ufc.com/event/ufc-fight-night-february-07-2026">comment regarder</a>
+					<a target="_blank" href=" https://www.axs.com/fr/events/1257394/ufc-fight-night-bautista-vs-oliveira-tickets">billet</a>
+				</div>
+
+			</div>
+		</div>
+	{% endif %}
+
+
+	{% if lang == 'en' %}
+		<div class="twitter_post">
+			<blockquote class="twitter-tweet">
+				<p lang="en" dir="ltr">He made the most of his moment 🙌<a href="https://twitter.com/Bautista_mma?ref_src=twsrc%5Etfw">@Bautista_MMA</a>
+					proved how dangerous he is with a RD 2 submission victory at
+					<a href="https://twitter.com/hashtag/UFCVegas113?src=hash&amp;ref_src=twsrc%5Etfw">#UFCVegas113</a>!
+					<a href="https://t.co/DGJ3dKXh19">pic.twitter.com/DGJ3dKXh19</a>
+				</p>&mdash; UFC (@ufc)
+				<a href="https://twitter.com/ufc/status/2020512945806196886?ref_src=twsrc%5Etfw">February 8, 2026</a>
+			</blockquote>
+			<script async src="https://platform.twitter.com/widgets.js" ></script>
+		</div>
+
+		<div class="twitter_post">
+			<blockquote class="twitter-tweet">
+				<p lang="en" dir="ltr">One of the best to ever do it 👏<br><br>Last night
+					<a href="https://twitter.com/alexvolkanovski?ref_src=twsrc%5Etfw">@AlexVolkanovski</a>
+					added another W onto his incredible resume!
+					<a href="https://twitter.com/hashtag/UFC325?src=hash&amp;ref_src=twsrc%5Etfw">#UFC325</a>
+					<a href="https://t.co/qp5ln6AgHp">pic.twitter.com/qp5ln6AgHp</a>
+				</p>&mdash; UFC (@ufc)
+				<a href="https://twitter.com/ufc/status/2018021530291114367?ref_src=twsrc%5Etfw">February 1, 2026</a>
+			</blockquote>
+			<script async src="https://platform.twitter.com/widgets.js" ></script>
+		</div>
+	{% else %}
+
+		<div class="twitter_post">
+			<blockquote class="twitter-tweet">
+				<p lang="en" dir="ltr">Il a profité au maximum de son moment 🙌<a href="https://twitter.com/Bautista_mma?ref_src=twsrc%5Etfw">@Bautista_MMA</a>
+					a prouvé à quel point il était dangereux avec une victoire par soumission RD 2 à
+					<a href="https://twitter.com/hashtag/UFCVegas113?src=hash&amp;ref_src=twsrc%5Etfw">#UFCVegas113</a>!
+					<a href="https://t.co/DGJ3dKXh19">pic.twitter.com/DGJ3dKXh19</a>
+				</p>&mdash; UFC (@ufc)
+				<a href="https://twitter.com/ufc/status/2020512945806196886?ref_src=twsrc%5Etfw">8 février 2026</a>
+			</blockquote>
+			<script async src="https://platform.twitter.com/widgets.js"></script>
+		</div>
+
+		<div class="twitter_post">
+			<blockquote class="twitter-tweet">
+				<p lang="en" dir="ltr">L'un des meilleurs à avoir jamais fait La nuit dernièreast night
+					<a href="https://twitter.com/alexvolkanovski?ref_src=twsrc%5Etfw">@AlexVolkanovski</a>
+					a ajouté un autre W sur son incroyable CV!
+					<a href="https://twitter.com/hashtag/UFC325?src=hash&amp;ref_src=twsrc%5Etfw">#UFC325</a>
+					<a href="https://t.co/qp5ln6AgHp">pic.twitter.com/qp5ln6AgHp</a>
+				</p>&mdash; UFC (@ufc)
+				<a href="https://twitter.com/ufc/status/2018021530291114367?ref_src=twsrc%5Etfw">1er février, 2026</a>
+			</blockquote>
+			<script async src="https://platform.twitter.com/widgets.js" ></script>
+		</div>
+	{% endif %}
+
+{% endblock %}

@@ -1,0 +1,267 @@
+.sticky_bar_menu {
+  display: none;
+}
+
+                                              /* no need of sticky bar */
+
+.role_page_title_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.role_page_title_bg h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 800;
+  width: 150px;
+  padding: 0 0 0 20px;
+}
+
+                                              /* page title */
+
+.main_body {
+  display: flex;
+  justify-content: space-between;
+}
+.section_articls {
+  line-height: 25px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.cgu {
+  font-size: 50px;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
+}
+.cgu_info p a {
+  color: blue;
+}
+.cgu_info ol {
+  list-style: decimal;
+}
+
+.cgu_info ol li {
+  padding: 20px;
+}
+.section_head {
+  display: none;
+}
+
+.section_articls {
+  width: calc(64% - 20px);
+}
+
+.about_content {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.about_content h2 {
+  padding: 15px 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.about_content_item {
+  padding: 20px 15px;
+  text-align: justify;
+}
+
+.about_content_table {
+  padding: 20px 15px;
+  text-align: justify;
+}
+
+.about_content_table p {
+  padding: 20px 0;
+}
+
+.about_content_table table thead {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.about_content_table table thead tr td {
+  padding: 20px;
+  border: 1px solid rgb(128 128 128);
+  width: 300px;
+}
+
+.about_content_table table tbody tr td {
+  padding: 20px;
+  border: 1px solid rgb(128 128 128);
+  width: 400px;
+}
+
+.about_content_roles {
+  padding: 20px 15px;
+  text-align: justify;
+}
+
+.about_content_roles ul li {
+  padding: 20px 0;
+  list-style: disc;
+}
+.about_content_numbers {
+  padding: 20px 15px;
+  text-align: justify;
+}
+
+                                              /* side bar */
+.side_bar_match {
+  width: calc(36% - 20px);
+}
+.a_propos_side_bar {
+  position: relative;
+  height: 392px;
+  overflow: hidden;
+  width: 100%;
+}
+.role_sidebar_img img {
+  width: 100%;
+}
+
+.a_propos_side_bar::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(0 0 0 / 73%);
+  top: 0;
+  left: 0;
+}
+.cheracter_profile {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.cheracter_profile_detail > p:first-child {
+  color: #a4a7ac;
+  padding: 0 0 20px 0;
+}
+
+.cheracter_profile_detail {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  z-index: 1;
+  color: white;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.role_line span {
+  position: relative;
+  font-size: 10px;
+  font-weight: 600;
+}
+.cheracter_profile_detail span::after {
+  position: absolute;
+  content: "";
+  width: 63px;
+  height: 1px;
+  top: 44%;
+  left: 20px;
+  z-index: 1;
+  background: white;
+}
+
+.cheracter_profile_detail span::before {
+  position: absolute;
+  content: "";
+  width: 63px;
+  height: 1px;
+  top: 44%;
+  right: 20px;
+  z-index: 1;
+  background: white;
+}
+
+.cheracter_profile_detail h3 {
+  color: white;
+  font-size: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.cheracter_profile_detail p {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cheracter_profile img:first-child {
+  position: absolute;
+  top: 31%;
+  left: 0%;
+  width: 144px;
+  z-index: 1;
+}
+.cheracter_profile img:last-child {
+  position: absolute;
+  top: 25%;
+  right: 0%;
+  width: 140px;
+  z-index: 1;
+}
+
+.cheracter_profile img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.a_propos_side_bar_buttons {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  z-index: 1;
+  display: flex;
+}
+
+.a_propos_side_bar_buttons a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+  width: 204px;
+  height: 50px;
+  display: block;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  background: white;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+}
+.a_propos_side_bar_buttons a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 4%;
+  left: 0;
+  bottom: 1%;
+  color: black;
+  background: rgb(255, 0, 0);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+}
+.a_propos_side_bar_buttons a:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+.a_propos_side_bar_buttons a:hover::after {
+  width: 100%;
+  z-index: 1;
+}
+
+.a_propos_side_bar_buttons a:first-child {
+  border-right: 1px solid transparent;
+}

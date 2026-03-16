@@ -1,0 +1,224 @@
+/* sitcky bar */
+.sticky_bar_menu {
+  position: sticky;
+  top: 0;
+  left: 9%;
+  z-index: 1000;
+  height: 90%;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.sticky_bar_menu nav {
+  background: #f3f3f3;
+  padding: 10px 5px 5px 5px;
+  margin: 0px 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 6px 0px;
+}
+.sticky_bar_menu nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sticky_bar_menu nav ul li {
+  padding: 10px;
+}
+
+.sticky_bar_menu nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+.sticky_bar_menu nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 10%;
+  color: black;
+  background: rgb(255, 0, 0);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.sticky_bar_menu nav ul li:hover a {
+  color: #d20a0a;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.sticky_bar_menu nav ul li a:hover::after {
+  width: 100%;
+  transform: scale(1.5);
+}
+
+                                              /* sticky bar end */
+.page_title {
+  background: center / contain no-repeat
+    url("../images/fond/5cf72ff35fb6f74465515467_triangle.png");
+  background-size: cover;
+  background-color: white;
+  margin: 0 0 10px 0;
+}
+.role_page_title_bg {
+  text-align: center;
+  padding: 96px 0;
+}
+
+.role_page_title_bg p:first-child {
+  color: #d20a0a;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+.role_page_title_bg h1 {
+  font-size: 70px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+                                              /* page title */
+
+.profile_articles {
+  padding: 40px 0 20px 0;
+  background: #19192e;
+}
+
+.profile_articles:nth-of-type(odd) {
+  background: #19192ec4;
+  color: #19192e;
+}
+
+.fighters_article_content {
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.articl_img {
+  border: 2px solid #808080;
+  border-image: linear-gradient(to bottom, transparent, #808080) 1 100%;
+  position: relative;
+  padding: 0 15px;
+}
+
+.articl_img figcaption {
+  display: none;
+}
+.articl_img::after {
+  position: absolute;
+  content: "";
+  background: #808080;
+  height: 2px;
+  width: 100%;
+  bottom: -2px;
+  left: 0px;
+}
+
+.article_details {
+  padding: 10px 0;
+  text-align: justify;
+  font-size: 15px;
+  font-weight: 500;
+}
+.article_details p {
+  padding: 5px 5px;
+  line-height: 25px;
+}
+
+.article_details > p:first-child::first-letter {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fb5752;
+  text-transform: uppercase;
+}
+.article_details a {
+  color: white;
+}
+
+.article_details a:hover {
+  color: #fb5752;
+}
+
+.article_profile_stats {
+  width: 40%;
+}
+
+.secondary_info {
+  display: flex;
+  gap: 5px;
+}
+
+.secondary_info p {
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 0 3px 0 0;
+  padding: 4px 8px;
+  line-height: 20px;
+  height: 20px;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.profile_name p {
+  color: #a8a8a8fe;
+  padding: 15px 0;
+  font-size: 20px;
+}
+
+.profile_name h2 {
+  margin: 0 0 10px 0;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.profile_tag p {
+  line-height: 15px;
+  font-size: 14px;
+}
+
+.profile_stats_data {
+  display: flex;
+  gap: 0px;
+}
+
+.profile_stats_vic {
+  padding: 20px;
+  text-align: center;
+  border-right: 1px solid rgb(128, 128, 128);
+  font-size: 22px;
+  color: white;
+  display: inline-block;
+  line-height: 28px;
+  padding: 0 32px;
+}
+
+.profile_stats_vic:last-child {
+  border-right: none;
+}
+
+.profile_stats_vic p:first-child {
+  font-size: 35px;
+  color: white;
+  border-bottom: 3px solid #fb5752;
+  display: inline-block;
+  line-height: 55px;
+  min-width: 40px;
+}
+
+.profile_stats_vic p:last-child {
+  color: white;
+  padding: 12px 0;
+}

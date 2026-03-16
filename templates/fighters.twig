@@ -1,0 +1,193 @@
+{% extends "base.twig" %}
+
+{% block css_style %}
+	<link rel="stylesheet" href="./css/fighters.css">
+{% endblock css_style %}
+
+
+{% block title %}
+	{{ title|title }}
+{% endblock title %}
+
+														{# languages options #}
+{% block language %}
+	<li>
+		<a href="fighters.php"><img src="./images/language_icon/france.png" alt="icône de langue pour la france"></a>
+	</li>
+{% endblock %}
+
+{% block language_en %}
+	<li>
+		<a href="fighters-en.php"><img src="./images/language_icon/united-kingdom.png" alt="language icon united-kingdom"></a>
+	</li>
+{% endblock %}
+
+
+{% block main %}
+	<main>
+															{# sticky bar #}
+		<div class="sticky_bar_menu">
+			<nav class="sticky_catagory_menu">
+				{% block sticky_menu %}
+					{% if lang == 'en' %}
+						<ul>
+							{% for menu_items in profile_article %}
+								<li>
+									<a href="#{{ menu_items.menu|replace({' ': '_'}) }}">{{ menu_items.menu }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+						<ul>
+							{% for menu_items in profile_article %}
+								<li>
+									<a href="#{{ menu_items.menu|replace({' ': '_'}) }}">{{ menu_items.menu }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				{% endblock %}
+			</nav>
+		</div>
+															{# page head title section #}
+		<section class="page_title">
+			<div class="role_page_title_bg">
+				{% if lang =='en' %}
+					<p>Tendance</p>
+					<h1>- All Men -</h1>
+					<p>{{ profile_article|length }}
+						Athletes</p>
+
+				{% else %}
+					<p>Tendance</p>
+					<h1>- Tout Hommes -</h1>
+					<p>{{ profile_article|length }}
+						Athletes</p>
+				{% endif %}
+			</div>
+		</section>
+
+
+		{% if lang == 'en' %}
+															{# main body, players #}
+			{% for fighter in profile_article %}
+				<article id="{{ fighter.menu|replace({' ': '_'}) }}" class="profile_articles">
+					<div class="fighters_article_content">
+
+						<figure class="articl_img">
+							<img src="{{ fighter.img }}" alt="{{ fighter.name }}">
+							<figcaption>{{ fighter.name }}</figcaption>
+						</figure>
+						<div class="article_profile_stats">
+							<div class="secondary_info">
+								{% for tag in fighter.hero_profiletag %}
+									<p>{{ tag }}</p>
+								{% endfor %}
+							</div>
+
+							<div class="profile_name">
+								{% if fighter.nick_name != "" %}
+									<p>"{{ fighter.nick_name }}"</p>
+								{% endif %}
+								<h2>{{ fighter.name }}</h2>
+							</div>
+							<div class="profile_tag">
+								{% for data in fighter.details %}
+									<p>{{ data }}</p>
+								{% endfor %}
+							</div>
+
+							<div class="profile_stats">
+								<div class="profile_stats_data">
+									{% for stats in fighter.statistics %}
+										{% if stats.valeur != "" %}
+											<div class="profile_stats_vic">
+												<p>
+													{{ stats.valeur }}</p>
+												<p>
+													{{ stats.titre }}</p>
+											</div>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+							<div class="article_details">
+
+								{% set fighter_article_txt = fighter.main_content_article|split('\n') %}
+								{% for fighter_articl_txt_content in fighter_article_txt %}
+									{% if fighter_articl_txt_content != "" %}
+										<p>{{ fighter_articl_txt_content|trim }}
+										</p>
+									{% endif %}
+								{% endfor %}
+								<a href="">
+									<i class="bi bi-three-dots"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			{% endfor %}
+		{% else %}
+															{# main body players french #}
+			{% for fighter in profile_article %}
+				<article id="{{ fighter.menu|replace({' ': '_'}) }}" class="profile_articles">
+					<div class="fighters_article_content">
+
+						<figure class="articl_img">
+							<img src="{{ fighter.img }}" alt="{{ fighter.name }}">
+							<figcaption>{{ fighter.name }}</figcaption>
+						</figure>
+						<div class="article_profile_stats">
+							<div class="secondary_info">
+								{% for tag in fighter.hero_profiletag %}
+									<p>{{ tag }}</p>
+								{% endfor %}
+							</div>
+
+							<div class="profile_name">
+								{% if fighter.nick_name != "" %}
+									<p>"{{ fighter.nick_name }}"</p>
+								{% endif %}
+								<h2>{{ fighter.name }}</h2>
+							</div>
+							<div class="profile_tag">
+								{% for data in fighter.details %}
+									<p>{{ data }}</p>
+								{% endfor %}
+							</div>
+
+							<div class="profile_stats">
+								<div class="profile_stats_data">
+									{% for stats in fighter.statistics %}
+										{% if stats.valeur != "" %}
+											<div class="profile_stats_vic">
+												<p>
+													{{ stats.valeur }}</p>
+												<p>
+													{{ stats.titre }}</p>
+											</div>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+							<div class="article_details">
+
+								{% set fighter_article_txt = fighter.main_content_article|split('\n') %}
+								{% for fighter_articl_txt_content in fighter_article_txt %}
+									{% if fighter_articl_txt_content != "" %}
+										<p>{{ fighter_articl_txt_content|trim }}
+										</p>
+									{% endif %}
+								{% endfor %}
+								<a href="">
+									<i class="bi bi-three-dots"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			{% endfor %}
+		{% endif %}
+	</main>
+{% endblock main %}
