@@ -36,5 +36,13 @@ I implemented a custom "sticky" navigation menu that slides down as the user scr
 ## 📌 Project Overview
 **Grade: 20/20 (Top of Class)**
 This project was a "Sprint" challenge...
----
+---## 📸 Project Preview
+
+Voici un aperçu visuel du projet qui a obtenu la note de 20/20 :
+
+| Desktop View - Home | Category Page |
+| :---: | :---: |
+| ![Fighters Page](fighter_page.png) | ![News Page](news_page.png) |
+
+*Note : Les captures d'écran illustrent l'interface finale présentée au jury.*
 *Developed as part of the BUT MMI (Multimedia & Internet) program.*
