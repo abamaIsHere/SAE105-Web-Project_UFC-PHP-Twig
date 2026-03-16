@@ -41,7 +41,7 @@ This project was a "Sprint" challenge...
 Voici un aperçu visuel du projet qui a obtenu la note de 20/20 :
 
 | Desktop View - Home | Fighters Page | News Page |
-| :---: | :---: |
+| :---: | :---: | :---: |
 | ![Fighters Page](ufc_home.png) | ![Fighters Page](fighter_page.png) | ![News Page](news_page.png) |
 
 *Note : Les captures d'écran illustrent l'interface finale présentée au jury.*
