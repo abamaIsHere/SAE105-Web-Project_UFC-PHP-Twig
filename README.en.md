@@ -38,11 +38,11 @@ I implemented a custom "sticky" navigation menu that slides down as the user scr
 This project was a "Sprint" challenge...
 ---## 📸 Project Preview
 
-Voici un aperçu visuel du projet qui a obtenu la note de 20/20 :
+Here is a visual overview of the project that received a perfect score of 20/20:
 
 | Desktop View - Home | Fighters Page | News Page |
 | :---: | :---: | :---: |
 | ![Fighters Page](screenshots/ufc_home.png) | ![Fighters Page](screenshots/fighter_page.png) | ![News Page](screenshots/news_page.png) |
 
-*Note : Les captures d'écran illustrent l'interface finale présentée au jury.*
+*Note: The screenshots show the final interface presented to the jury. The folder does not include the “vendor folder”.*
 *Developed as part of the BUT MMI (Multimedia & Internet) program.*
